@@ -28,7 +28,7 @@ steps:
     id: Deploy
     entrypoint: gcloud
 images:
-  - '$_G CR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME'
+  - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME'
 options:
   substitutionOption: ALLOW_LOOSE
 # substitutions = default variable
