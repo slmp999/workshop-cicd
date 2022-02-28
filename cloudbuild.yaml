@@ -21,14 +21,14 @@ steps:
       - $_SERVICE_NAME
       - '--platform=managed'
       - '--image=$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME'
-      - '--set-env-vars TOKEN_SECRET=_TOKEN_SECRET'
+      - '--set-env-vars=TOKEN_SECRET=_TOKEN_SECRET'
       - '--region=$_DEPLOY_REGION'
       - '--min-instances=0'
       - '--quiet'
     id: Deploy
     entrypoint: gcloud
 images:
-  - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME'
+  - '$_G CR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME'
 options:
   substitutionOption: ALLOW_LOOSE
 # substitutions = default variable
