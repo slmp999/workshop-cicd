@@ -21,6 +21,7 @@ steps:
       - $_SERVICE_NAME
       - '--platform=managed'
       - '--image=$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME'
+      - '--set-env-vars TOKEN_SECRET=_TOKEN_SECRET'
       - '--region=$_DEPLOY_REGION'
       - '--min-instances=0'
       - '--quiet'
@@ -30,6 +31,7 @@ images:
   - '$_GCR_HOSTNAME/$PROJECT_ID/$_SERVICE_NAME:$BRANCH_NAME'
 options:
   substitutionOption: ALLOW_LOOSE
+# substitutions = default variable
 substitutions:
   _DEPLOY_REGION: asia-southeast1
   _GCR_HOSTNAME: asia.gcr.io
